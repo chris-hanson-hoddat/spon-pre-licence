@@ -1,0 +1,59 @@
+<table style="border:1px solid grey;margin-bottom:10px;">
+  {% if priority %}
+   <span class="priority-case-flag"></span>
+  {% endif %}
+  <tbody>
+    <tr>
+      <td rowspan="3" colspan="1" width="0" style="border:none; min-width: 40px;" class="relative">
+        <!-- <label for="select-{{urn}}" class="block-label selection-button-checkbox">
+          <input type="checkbox" name="select-{{urn}}" value="true" id="select-{{urn}}">
+          &nbsp;
+        </label> -->
+        <div class="multiple-choice center" style="padding-left: 26px">
+          <input id="select{{urn}}" type="checkbox" name="select-{{URN}}" value="true">
+          <label for="select{{urn}}">&nbsp;</label>
+        </div>
+      </td>
+      <td colspan="3" class="font-xsmall">
+        Sponsorship - Change of circumstances - {{type}}
+      </td>
+      <td colspan="1" class="font-xsmall">
+        Due {{date}}
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a href="">{{type}}</a>
+      </td>
+      <td colspan="1">
+        <a href="">{{urn}}</a>
+      </td>
+    </tr>
+    <tr style="border:none;">
+      <td colspan="1" class="font-xsmall" style="border:none;">
+        <span class="bold-xsmall">
+          Requested
+        </span><br />
+        {{requested}}
+      </td>
+      <td colspan="1" class="font-xsmall" style="border:none;">
+        <span class="bold-xsmall">
+          Status
+        </span><br />
+        Not started
+      </td>
+      <td colspan="1" class="font-xsmall" style="border:none;">
+        <span class="bold-xsmall">
+          Assignee
+        </span><br />
+        Unassignee
+      </td>
+      <td colspan="1" class="font-xsmall" style="border:none;">
+        <span class="bold-xsmall">
+          Organisation
+        </span><br />
+        {{person}}
+      </td>
+    </tr>
+  </tbody>
+</table>
