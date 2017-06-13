@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Question page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+
+      <h1 class="heading-large">
+        Under which categories is your organisation applying to become a sponsor?
+      </h1>
+
+      <p class="form-hint">Choose the categories in which you wish to register (you can choose more than one).</p>
+
+      <form class="form">
+
+        <div class="form-group">
+          <fieldset>
+            <legend class="heading-medium">Tier 2 (Skilled Workers with a Job offer)</legend>
+            <div class="multiple-choice">
+              <input id="t2-general" type="checkbox" name="tier2" value="General" {{ checked('tier2','General') }}>
+              <label for="t2-general">General</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="t2-ict" type="checkbox" name="tier2" value="Intra Company Transfer" {{ checked('tier2','Intra Company Transfer') }}>
+              <label for="t2-ict">Intra Company Transfer</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="t2-sports" type="checkbox" name="tier2" value="Sports people" {{ checked('tier2','Sports people') }}>
+              <label for="t2-sports">Sports people</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="t2-ministers" type="checkbox" name="tier2" value="Ministers of religion" {{ checked('tier2','Ministers of religion') }}>
+              <label for="t2-ministers">Ministers of religion</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend class="heading-medium">Tier 4 (Students)</legend>
+            <div class="multiple-choice">
+              <input id="t4-general" type="checkbox" name="tier4" value="General" {{ checked('tier4','General') }}>
+              <label for="t4-general">General</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="t4-child" type="checkbox" name="tier4" value="Child" {{ checked('tier4','Child') }}>
+              <label for="t4-child">Child</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend class="heading-medium">Tier 5 (Temporary Workers)</legend>
+            <div class="multiple-choice">
+              <input id="t5-creative" type="checkbox" name="tier5" value="Creative and Sporting" {{ checked('tier5','Creative and Sporting') }}>
+              <label for="t5-creative">Creative and Sporting</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="t5-gov" type="checkbox" name="tier5" value="Government Authorised Exchange" {{ checked('tier5','Government Authorised Exchange') }}>
+              <label for="t5-gov">Government Authorised Exchange</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="t5-international" type="checkbox" name="tier5" value="International Agreement" {{ checked('tier5','International Agreement') }}>
+              <label for="t5-international">International Agreement</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="t5-religious" type="checkbox" name="tier5" value="Religious Workers" {{ checked('tier5','Religious Workers') }}>
+              <label for="t5-religious">Religious Workers</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="t5-charity" type="checkbox" name="tier5" value="Charity Workers" {{ checked('tier5','Charity Workers') }}>
+              <label for="t5-charity">Charity Workers</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+    <div class="column-third">
+
+      <aside class="govuk-related-items" role="complementary">
+        <h2 class="heading-medium" id="subsection-title">Help on this question</h2>
+
+        <p>You can select any number of categories, provided that you meet the requirements for every category you select. For a full description and the requirements for each tier and category, please see the <a href="https://www.gov.uk/government/publications/sponsor-a-tier-2-or-5-worker-guidance-for-employers">Tier 2 and 5 sponsor policy guidance</a> and <a href="https://www.gov.uk/government/publications/sponsor-a-tier-4-student-guidance-for-educators">Tier 4 sponsor policy guidance</a>.</p>
+
+        <p>If you register for Tier 2 (General) you will automatically be registered for all unrestricted sub-categories, which are:</p>
+        <ul class="list list-bullet">
+          <li>New hires - high earners</li>
+          <li>Extensions</li>
+          <li>Changes of employment</li>
+          <li>Switching</li>
+        </ul>
+
+        <p>You will also be eligible to apply for restricted certificates of sponsorship.</p>
+
+        <p>If you register for Tier 2 (Intra-Company Transfer) you will automatically be registered for all sub-categories, which are:</p>
+        <ul class="list list-bullet">
+          <li>Long Term staff</li>
+          <li>Graduate Trainee</li>
+        </ul>
+
+        <p>For more information on applying for a licence, please see our website: <a href="https://www.gov.uk/uk-visa-sponsorship-employers/apply-for-your-licence">Tier 2 / 5 sponsors</a> or <a href="https://www.gov.uk/apply-for-a-tier-4-sponsor-licence">Tier 4 sponsors</a>.</p>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

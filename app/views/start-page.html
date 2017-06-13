@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Start page example
+  {{ serviceName }}
 {% endblock %}
 
 {% block proposition_header %}
@@ -31,27 +31,30 @@
         {% if serviceName %} {{ serviceName }} {% endif %}
       </h1>
 
-      <p>Use this service to:</p>
+      <p>Use this service if you want to get permission to work in the UK for people from outside the European Economic Area (EEA) and Switzerland.</p>
+
+      <p>It is for employing people who:</p>
 
       <ul class="list list-bullet">
-        <li>do something</li>
-        <li>update your name, address or other details</li>
-        <li>you need to do this in order to do something else</li>
+        <li>don&rsquo;t otherwise have permission to work in the UK</li>
+        <li>will be doing a skilled job at <a href="#0">NQF level 6</a> or above</li>
       </uL>
-
-      <p>Registering takes around 5 minutes.</p>
 
       <p>
         <a class="button button-start" href="#" role="button">Start now</a>
       </p>
 
-      <h2 class="heading-medium">Before you start</h2>
+      <h2 class="heading-medium">You will need</h2>
 
-      <p>You can also <a href="#">register by post.</a></p>
+      <ul class="list list-bullet">
+        <li>your national insurance number or passport number</li>
+        <li>the company number of the business</li>
+        <li>to have advertised any role in a Jobcentre Plus</li>
+      </ul>
 
-      <p>The online service is also available in <a href="#">Welsh (Cymraeg).</a></p>
+      <p>There is a fee to have your application considered. For a small business it is &pound;536 and for a large business it is &pound;1496.</p>
 
-      <p>You can’t register for this service if you’re in the UK illegally.</p>
+      <p>If you are granted permission, there is a fee of &pound;250 for each person you sponsor for employment through this service.</p>
 
     </div>
     <div class="column-third">
