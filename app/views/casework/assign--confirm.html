@@ -9,23 +9,18 @@
       <div class="govuk-box-highlight new">
         <span class="hod-checkmark"></span>
         <h1 class="heading-large">
-          Application granted
+          Cases assigned
         </h1>
-        <p>
-          <strong class="heading-medium">
-            {% if name %}
-              {{ name }}
-            {% else %}
-              Acme corporation
-            {% endif %}
-          </strong>
-          {% if spn %}
-            {{ spn }}
-          {% else %}
-            SPN1231123
-          {% endif %}
-        </p>
       </div>
+
+      <h2 class="heading-medium">View case</h2>
+      <ul class="list panel panel-border-wide margin-bottom-30">
+        {% for case in case %}
+          <li><a href="/casework/case">{{ case }}</a></li>
+        {% else %}
+          <li><a href="/casework/case">S0012412/4233412</a></li>
+        {% endfor %}
+      </ul>
 
       <p><a href="workstack">Back to case list</a></p>
 

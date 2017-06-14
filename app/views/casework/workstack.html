@@ -77,111 +77,109 @@
       </div>
     </div>
 
-    <div class="column-two-thirds">
-      <form action="/multiple/assign" method="get">
-        <div class="form-group">
-          <select class="form-control" id="select-box" name="caseActions" style="height: 40px">
-            <option value="-">Choose an action...<option>
-            <option value="me">Assign to me</option>
-            <option value="someone">Assign to someone else...</option>
-          </select>
+    <form action="/casework/assign" method="get" class="form">
+      <div class="column-two-thirds">
 
-          &nbsp;<input type="submit" value="Go" class="button">
-        </div>
-      </form>
-    </div>
+          <div class="form-group">
+            <select class="form-control" id="select-box" name="caseActions" style="height: 40px">
+              <option value="-">Choose an action...<option>
+              <option value="me">Assign to me</option>
+              <option value="someone">Assign to someone else</option>
+            </select>
 
+            &nbsp;<input type="submit" value="Go" class="button">
+          </div>
 
-
-
-    <div class="column-full">
-      {% set type = "Add user" %}
-      {% set date = "26 May 2017" %}
-      {% set urn = "ABC1234567890" %}
-      {% set requested = "21 May 2017" %}
-      {% set person = "Pizza Planet" %}
-      {% set priority = true %}
-      {% include "./includes/case-card.html" %}
-
-      {% set type = "Add user" %}
-      {% set date = "28 May 2017" %}
-      {% set urn = "ABC9876543210" %}
-      {% set requested = "20 March 2017" %}
-      {% set person = "Bobs Burgers" %}
-      {% set priority = false %}
-      {% include "./includes/case-card.html" %}
-
-      {% set type = "Add user" %}
-      {% set date = "29 May 2017" %}
-      {% set urn = "CCC1239874560" %}
-      {% set requested = "24 May 2017" %}
-      {% set person = "Tesco" %}
-      {% set priority = true %}
-      {% include "./includes/case-card.html" %}
-
-      {% set type = "Add user" %}
-      {% set date = "2 June 2017" %}
-      {% set urn = "CCC1239874560" %}
-      {% set requested = "28 March 2017" %}
-      {% set person = "Tesco" %}
-      {% set priority = false %}
-      {% include "./includes/case-card.html" %}
-
-      {% set type = "Add user" %}
-      {% set date = "8 June 2017" %}
-      {% set urn = "ABC1234567890" %}
-      {% set requested = "1 April 2017" %}
-      {% set person = "Acme Corp" %}
-      {% set priority = false %}
-      {% include "./includes/case-card.html" %}
-
-      {% set type = "Add user" %}
-      {% set date = "30 June 2017" %}
-      {% set urn = "ABC1234567890" %}
-      {% set requested = "1 April 2017" %}
-      {% set person = "ABC Engineers" %}
-      {% set priority = false %}
-      {% include "./includes/case-card.html" %}
-
-      {% set type = "Add user" %}
-      {% set date = "14 July 2017" %}
-      {% set urn = "ABC1234567890" %}
-      {% set requested = "3 April 2017" %}
-      {% set person = "We People" %}
-      {% set priority = false %}
-      {% include "./includes/case-card.html" %}
-
-      {% set type = "Add user" %}
-      {% set date = "28 July 2017" %}
-      {% set urn = "CCC1239874560" %}
-      {% set requested = "20 April 2017" %}
-      {% set person = "Tesco" %}
-      {% set priority = false %}
-      {% include "./includes/case-card.html" %}
-
-      {% set type = "Add user" %}
-      {% set date = "28 July 2017" %}
-      {% set urn = "CCC1239874560" %}
-      {% set requested = "20 April 2017" %}
-      {% set person = "Tesco" %}
-      {% set priority = false %}
-      {% include "./includes/case-card.html" %}
-
-      {% set type = "Add user" %}
-      {% set date = "8 August 2017" %}
-      {% set urn = "ABC1234567890" %}
-      {% set requested = "20 April 2017" %}
-      {% set person = "Pizza Planet" %}
-      {% set priority = false %}
-      {% include "./includes/case-card.html" %}
+      </div>
 
 
 
 
+      <div class="column-full">
+        {% set type = "Licence application" %}
+        {% set date = "40" %}
+        {% set urn = "S0012412/4233412" %}
+        {% set company = "Pizza Planet" %}
+        {% set tier = 2 %}
+        {% set priority = true %}
+        {% include "./includes/case-card.html" %}
+
+        {% set type = "Licence application" %}
+        {% set date = "40" %}
+        {% set urn = "S0012412/4233411" %}
+        {% set company = "Bobs Burgers" %}
+        {% set tier = 2 %}
+        {% set priority = false %}
+        {% include "./includes/case-card.html" %}
+
+        {% set type = "Licence application" %}
+        {% set date = "42" %}
+        {% set urn = "S0012412/4233432" %}
+        {% set company = "Tesco" %}
+        {% set tier = 2 %}
+        {% set priority = false %}
+        {% include "./includes/case-card.html" %}
+
+        {% set type = "Licence application" %}
+        {% set date = "45" %}
+        {% set urn = "S0012412/4233467" %}
+        {% set company = "Tesco" %}
+        {% set tier = 2 %}
+        {% set priority = false %}
+        {% include "./includes/case-card.html" %}
+
+        {% set type = "Licence application" %}
+        {% set date = "45" %}
+        {% set urn = "S0012412/4233412" %}
+        {% set company = "Acme Corp" %}
+        {% set tier = 2 %}
+        {% set priority = false %}
+        {% include "./includes/case-card.html" %}
+
+        {% set type = "Licence application" %}
+        {% set date = "46" %}
+        {% set urn = "S0012412/4233412" %}
+        {% set company = "ABC Engineers" %}
+        {% set tier = 5 %}
+        {% set priority = false %}
+        {% include "./includes/case-card.html" %}
+
+        {% set type = "Licence application" %}
+        {% set date = "46" %}
+        {% set urn = "S0012412/4233412" %}
+        {% set company = "We People" %}
+        {% set tier = 5 %}
+        {% set priority = false %}
+        {% include "./includes/case-card.html" %}
+
+        {% set type = "Licence application" %}
+        {% set date = "50" %}
+        {% set urn = "S0012412/4233412" %}
+        {% set company = "Tesco" %}
+        {% set tier = 2 %}
+        {% set priority = false %}
+        {% include "./includes/case-card.html" %}
+
+        {% set type = "Licence application" %}
+        {% set date = "55" %}
+        {% set urn = "S0012412/4233412" %}
+        {% set company = "Tesco" %}
+        {% set tier = 2 %}
+        {% set priority = false %}
+        {% include "./includes/case-card.html" %}
+
+        {% set type = "Licence application" %}
+        {% set date = "60" %}
+        {% set urn = "S0012412/4233412" %}
+        {% set company = "Lancaster University" %}
+        {% set tier = 4 %}
+        {% set priority = false %}
+        {% include "./includes/case-card.html" %}
+      </div>
+
+    </form>
 
   </div>
-</div>
-
 </main>
 
 {% endblock %}

@@ -65,6 +65,20 @@ $path: "/public/images/";
   }
 }
 
+.column-one-fifth {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  .column-one-fifth {
+    float: left;
+    width: 20%;
+  }
+}
+
 
 
 // Helper classes
@@ -289,15 +303,116 @@ address {
 
 
 
-.priority-case-flag {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 30px 30px 0 0;
-  border-color: red transparent transparent;
-  position:absolute;
+
+
+// CARDS
+.card {
+  display: table;
+  border: 1px solid $border-colour;
+  background: $highlight-colour;
+  position: relative;
+  margin-bottom: 15px;
 }
 
+.card__checkbox {
+  display: table-cell;
+  vertical-align: middle;
+  border-right: 1px solid $border-colour;
+  padding-right: 15px;
+}
+  .card__checkbox .multiple-choice {
+    background-color: white;
+    padding-left: 26px;
+  }
+
+.card__content {
+  display: table-cell;
+  width: 100%;
+}
+
+.card__checkbox, .card__head, .card__body {
+  padding: 15px;
+}
+
+.card__head {
+  border-bottom: 1px solid $border-colour;
+
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+
+.table {
+  display: table;
+  width: 100%;
+}
+  .table__cell {
+    display: table-cell;
+    width: auto;
+  }
+
+
+
+.badge {
+  color: white;
+  padding: 0.1em 0.5em 0 0.5em;
+  font-weight: bold;
+  font-size: 70%;
+  margin-left: 0.5em;
+
+  position: relative;
+  top: -0.2em;
+
+  &.priority {
+    background: $grey-1;
+  }
+  &.premium {
+    background: $mauve;
+  }
+}
+
+
+
+
+
+  .cases .caseworker {
+    padding: 0.9em 0;
+
+  };
+  .cases {
+    td:first-child,
+      th:first-child {
+      padding-left: 0.5em;
+    }
+    td {
+      border: none;
+    }
+  }
+  .cases .badge {
+    color: white;
+    padding: 0.1em 0.5em 0 0.5em;
+    font-weight: bold;
+    font-size: 70%;
+    margin-left: 0.5em;
+
+    position: relative;
+    top: -0.2em;
+
+    &.priority {
+      background: $grey-1;
+    }
+    &.premium {
+      background: $mauve;
+
+    }
+  }
+.border-bottom {
+  border-bottom: 1px solid $grey-2;
+}
 
 
 

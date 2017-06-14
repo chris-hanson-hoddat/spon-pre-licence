@@ -8,4 +8,27 @@ router.get('/', function (req, res) {
 
 // add your routes here
 
+router.get('/casework/assign', function (req, res) {
+  var assign = req.query.case
+
+  res.render('casework/assign', {
+    'case': assign
+  })
+})
+router.get('/casework/assign--confirm', function (req, res) {
+  var assign = req.query.case
+
+  res.render('casework/assign--confirm', {
+    'case': assign
+  })
+})
+
+
+
+
+
+
+
+
+
 module.exports = router
