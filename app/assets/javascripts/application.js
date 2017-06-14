@@ -43,6 +43,26 @@ $("#js-searchtoggle").click(function(e) {
 
 
 
+// Set dates dynamically so they stay useful throughout prototyping
+$('.date').each(function() {
+  var days = $(this).data('days');
+  var currentTime = new Date();
+  currentTime.setDate(currentTime.getDate()+days);
+  var month = currentTime.getMonth();
+
+  var months = [ "January", "February", "March", "April", "May", "June",
+                 "July", "August", "September", "October", "November", "December", "January" ];
+
+  var monthName = months[month];
+
+  var day = currentTime.getDate();
+  var year = currentTime.getFullYear();
+  $(this).text(day + " " + monthName + " " + year);
+});
+
+
+
+
 // Left nav
 // Left hand tab navigation, e.g. case screen
 $('.leftnavlinks').click(function(e) {

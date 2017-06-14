@@ -1,59 +1,76 @@
-<table style="border:1px solid grey;margin-bottom:10px;">
-  {% if priority %}
-   <span class="priority-case-flag"></span>
-  {% endif %}
-  <tbody>
-    <tr>
-      <td rowspan="3" colspan="1" width="0" style="border:none; min-width: 40px;" class="relative">
-        <!-- <label for="select-{{urn}}" class="block-label selection-button-checkbox">
-          <input type="checkbox" name="select-{{urn}}" value="true" id="select-{{urn}}">
-          &nbsp;
-        </label> -->
-        <div class="multiple-choice center" style="padding-left: 26px">
-          <input id="select{{urn}}" type="checkbox" name="select-{{URN}}" value="true">
-          <label for="select{{urn}}">&nbsp;</label>
+<div class="card">
+
+  <div class="card__checkbox">
+    <div class="multiple-choice">
+      <input id="case{{urn}}" type="checkbox" name="case" value="{{urn}}">
+      <label for="case{{urn}}">&nbsp;</label>
+    </div>
+  </div>
+
+  <div class="card__content">
+    <div class="card__head">
+      <h2 class="font-small float-left">Sponsorship &ndash; {{type}}</h2>
+      <span class="bold-small float-right">
+        Due: <span class="date" data-days="{{date}}"></span>
+      </span>
+    </div>
+    <div class="card__body">
+      <div class="grid-row">
+        <div class="column-two-thirds margin-bottom-15">
+          <a href="/casework/case?type={{type}}&name={{company}}&urn={{urn}}">{{type}}</a>
+          {% if priority %}
+           <span class="badge priority">
+              Priority
+            </span>
+          {% endif %}
         </div>
-      </td>
-      <td colspan="3" class="font-xsmall">
-        Sponsorship - Change of circumstances - {{type}}
-      </td>
-      <td colspan="1" class="font-xsmall">
-        Due {{date}}
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <a href="">{{type}}</a>
-      </td>
-      <td colspan="1">
-        <a href="">{{urn}}</a>
-      </td>
-    </tr>
-    <tr style="border:none;">
-      <td colspan="1" class="font-xsmall" style="border:none;">
-        <span class="bold-xsmall">
-          Requested
-        </span><br />
-        {{requested}}
-      </td>
-      <td colspan="1" class="font-xsmall" style="border:none;">
-        <span class="bold-xsmall">
-          Status
-        </span><br />
-        Not started
-      </td>
-      <td colspan="1" class="font-xsmall" style="border:none;">
-        <span class="bold-xsmall">
-          Assignee
-        </span><br />
-        Unassignee
-      </td>
-      <td colspan="1" class="font-xsmall" style="border:none;">
-        <span class="bold-xsmall">
-          Organisation
-        </span><br />
-        {{person}}
-      </td>
-    </tr>
-  </tbody>
-</table>
+        <div class="column-one-third">
+          {{urn}}
+        </div>
+      </div>
+      <div class="table">
+        <!-- <div class="table__cell">
+          <span class="bold-small">
+            Requested
+          </span>
+          <br>
+          {{requested}}
+        </div> -->
+        <div class="table__cell">
+          <span class="bold-small">
+            Status
+          </span>
+          <br>
+          Not started
+        </div>
+        <div class="table__cell">
+          <span class="bold-small">
+            Assignee
+          </span>
+          <br>
+          –
+        </div>
+        <div class="table__cell">
+          <span class="bold-small">
+            Organisation
+          </span>
+          <br>
+          {{company}}
+          {% if priority %}
+            <span class="badge premium">
+              Premium
+            </span>
+          {% endif %}
+        </div>
+        <div class="table__cell">
+          <span class="bold-small">
+            Tier
+          </span>
+          <br>
+          {{tier}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

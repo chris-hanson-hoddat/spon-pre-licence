@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a href="workstack" class="link-back">Back to case list</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge margin-top-30 margin-bottom-15">
+        Do you want to assign these cases to yourself?
+      </h1>
+
+      <ul class="list panel panel-border-wide margin-bottom-30">
+        {% for case in case %}
+          <li>{{ case }}</li>
+        {% else %}
+          <li>No options selected</li>
+        {% endfor %}
+      </ul>
+
+      <form action="assign--confirm" method="get" class="form">
+
+        {% for case in case %}
+          <input type="hidden" name="case" value="{{case}}">
+        {% endfor %}
+
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Yes, assign to me">
+        </div>
+        <p>or <a href="workstack">cancel</a></p>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
