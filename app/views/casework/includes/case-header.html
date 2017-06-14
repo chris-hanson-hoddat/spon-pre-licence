@@ -1,0 +1,67 @@
+<div class="grid-row margin-bottom-30">
+  <div class="column-full">
+    <a href="workstack" class="link-back">Back to workstack</a>
+
+    <div class="page-header">
+      <div class="grid-row">
+
+        <div class="column-two-thirds">
+          <h1 class="heading-large margin-0">
+             Pre-licence application
+          </h1>
+          <p>
+            {% if name %}
+              {{ name }}
+            {% else %}
+              Acme corporation
+            {% endif %}
+            <span class="secondary-text">
+              {% if spn %}
+                {{ spn }}
+              {% else %}
+                SPN1231123
+              {% endif %}
+            </span>
+            <br>
+            <!-- <span class="secondary-text">Service standard: 22 April 2017</span> -->
+          </p>
+        </div>
+
+        <div class="column-one-third" style="text-align: right;">
+         {% if not overview %}
+            <a class="button-secondary put-on-hold" onclick="window.location='/on-hold'+window.location.search;">Put on hold</a>
+          {% endif %}
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    <div class="grid-row js-notes" style="display: none">
+      <div class="column-full">
+
+        <div class="panel panel-grey">
+          <form action="" class="form">
+
+            <div class="form-group">
+              <label class="form-label-bold" for="case-note">
+                Add a note about this case
+              </label>
+              <textarea type="text" class="form-control" id="case-note-text" name="Case notes" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+              <a href="#0" class="button js-save-note">
+                Save note
+              </a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

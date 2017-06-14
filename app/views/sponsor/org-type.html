@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Select the option that best describes your type of organisation
+      </h1>
+
+      <form action="#0" method="get" class="form">
+
+        <div class="form-group">
+          <label class="visuallyhidden" for="select-box">Choose the sector that corresponds to your organisation&rsquo;s main economic activity</label>
+          <select class="form-control" id="select-box" name="select-box">
+            <option value="">- select -</option>
+            <option value="BOOC">Branch Office of an Overseas Company</option>
+          	<option value="GDQA">Central/local Gov. Dept; Body; Quango, Agency Public Body</option>
+          	<option value="CHAR">Charity</option>
+          	<option value="CLG">Company limited by Guarantee</option>
+          	<option value="IPSA">Co Inc under the Industrial &amp; Provident Societies Act 1968</option>
+          	<option value="HOCA">Hotel and/or Catering Establishment</option>
+          	<option value="IBRC">Incorporated by Royal Charter</option>
+          	<option value="LLP">Limited Liability Partnership</option>
+          	<option value="LTDP">Limited Partnership</option>
+          	<option value="OGIO">Overseas Gov. Int. Organisation, Diplomatic Mission</option>
+          	<option value="PART">Partnership</option>
+          	<option value="IND">Private Individual</option>
+          	<option value="LTD">Private Limited Company/Limited Liability Company</option>
+          	<option value="PLC">Public Limited Company</option>
+          	<option value="REL">Religious and/or Faith Body</option>
+          	<option value="ROOC">Representative Office of an Overseas Company</option>
+          	<option value="SOLE">Sole Trader</option>
+          	<option value="ULTD">Unlimited Company</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

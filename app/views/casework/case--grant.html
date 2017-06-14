@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div class="govuk-box-highlight new">
+        <span class="hod-checkmark"></span>
+        <h1 class="heading-large">
+          Application granted
+        </h1>
+        <p>
+          <strong class="heading-medium">
+            {% if name %}
+              {{ name }}
+            {% else %}
+              Acme corporation
+            {% endif %}
+          </strong>
+          {% if spn %}
+            {{ spn }}
+          {% else %}
+            SPN1231123
+          {% endif %}
+        </p>
+      </div>
+
+      <p><a href="workstack">Back to workstack</a></p>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

@@ -38,3 +38,53 @@ $("#js-searchtoggle").click(function(e) {
   .toggleText('Show search', 'Close search')
   .toggleClass('open');
 });
+
+
+
+
+
+// Left nav
+// Left hand tab navigation, e.g. case screen
+$('.leftnavlinks').click(function(e) {
+  e.preventDefault();
+  var current = $('.leftnavlinks.active').data('target');
+  var target = $(this).data('target');
+
+  // If the continue button is selected
+  if ( $(this).hasClass('button') ) {
+    $('.leftnavcontent').hide();
+    $('#'+target).show();
+    $('.leftnavlinks').removeClass('active');
+    $('.'+target).addClass('active');
+    $('html,body').scrollTop(0);
+    $('.'+target).parent().prev().find('.tag--complete').show();
+
+    // remove all if this is a resubmit
+    $('.'+current+'-results').find('tr').remove();
+
+    // Store and display case details
+    // loop through any form input with class of .store...
+    $('#'+current+' .store').each(function (index, value) {
+      //store the name attribute (key) and the value entered (value)...
+      var thisKey = $(this).attr('name');
+      var thisVal = $(this).val();
+
+      if ( thisVal.length > 0 ) {
+        $('.results-title').removeClass('visuallyhidden');
+        $('.'+current+'-results')
+          .append(
+            '<tr><th>' + thisKey + '</th><td>' + thisVal + '</td></tr>'
+            )
+          .show();
+      }
+    });
+  }
+  else {
+    $('.leftnavcontent').hide();
+    $('#'+target).show();
+    $('.leftnavlinks').removeClass('active');
+    $('.'+target).addClass('active');
+  }
+
+
+}); // /left links

@@ -50,6 +50,23 @@ $path: "/public/images/";
 }
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.column-three-quarters {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  .column-three-quarters {
+    float: left;
+    width: 75%;
+  }
+}
+
+
+
 // Helper classes
 // Common tasks like adding/removing margin
 .margin-0 {
@@ -141,6 +158,88 @@ address {
   }
 
 
+
+
+
+// Add a secondary button
+.button-secondary {
+  @include button ($grey-3);
+  @include box-sizing (border-box);
+  vertical-align: top;
+
+  @include media (mobile) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
+
+.page-header {
+  border-bottom: 5px solid $govuk-blue;
+  margin-top: 30px;
+}
+
+.secondary-text {
+  color: $grey-1;
+  font-size: 80%;
+  font-weight: normal;
+}
+
+
+
+
+.govuk-box-highlight.new {
+  padding: 1em 2em 2em;
+  background-color: $green;
+
+  a, a:hover, a:visited {
+    color: white;
+    font-weight: 700;
+  }
+
+  .hod-checkmark {
+    font-size: 60px;
+    display: block;
+    margin: 15px auto;
+    position: relative;
+    background: rgba(255,255,255,0.1);
+    //background-color: lighten($green, 5%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: pulse 1.5s .5s ease;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    + .heading-large {
+      margin-top: 0;
+    }
+
+  }
+}
+
+@keyframes pulse {
+    0%,100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.15);
+    }
+}
+
+
+
+
+
+
 .filter .form-control {
   width: 100%;
   background: white;
@@ -198,3 +297,62 @@ address {
   border-color: red transparent transparent;
   position:absolute;
 }
+
+
+
+
+
+// Left Nav
+// e.g. Used on case screen
+ul.leftnavSimpler {
+  list-style-type: none;
+  margin: 0 0 0 -0.5em;
+  padding: 0;
+  overflow: hidden;
+  float: left;
+  width: 100%;
+
+
+  li a {
+    display: block;
+    padding: 0.5em 0.5em;
+    text-decoration: none;
+    transition: 0.1s;
+  }
+
+  li a:hover {
+      color: $link-colour;
+      text-decoration: underline;
+  }
+  .active, li a.active:hover {
+      font-weight: bold;
+      text-decoration: none;
+  }
+
+}
+
+// Content displayed by left nav
+.leftnavcontent {
+  display: none;
+  float: left;
+  width: 100%;
+}
+  .leftnavcontent h3 {
+    margin: 0px;
+    display: inline;
+  }
+  .leftnavcontent .notice strong {
+    margin-bottom: 30px;
+  }
+  .leftnavcontent blockquote {
+    padding: 30px;
+  }
+  .leftnavcontent .other-info {
+    margin-top: 1.25em;
+    margin-bottom: 60px;
+  }
+  .leftnavcontent img {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }

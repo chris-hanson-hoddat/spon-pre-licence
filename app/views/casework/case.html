@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "./includes/case-header.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-one-quarter">
+      {% include "./includes/left-tab-menu.html" %}
+    </div>
+
+    <div class="column-three-quarters">
+
+
+      <div id="app-section" class="leftnavcontent" style="display: block">
+        <form class="check-fields" data-current="app-section">
+
+          <h2 class="heading-medium margin-top-0">Application</h2>
+
+          <p>Coming soon</p>
+
+        </form>
+      </div>
+
+
+
+
+
+      <div id="decision-section" class="leftnavcontent">
+        <form action="case--grant" class="check-fields" data-current="decision-section">
+
+          <h2 class="heading-medium margin-top-0">
+            Decision
+          </h2>
+
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="visually-hidden">Application decision</legend>
+              <div class="multiple-choice">
+                <input id="decisionYes" type="radio" name="decision" value="Yes" {{ checked('decision','Yes') }}>
+                <label for="decisionYes">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="decisionNo" type="radio" name="decision" value="No" {{ checked('decision','No') }}>
+                <label for="decisionNo">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label-bold" for="decisionDetails">Notes</label>
+            <textarea type="text" class="form-control" id="decisionDetails" name="decisionDetails" ></textarea>
+          </div>
+
+          <div class="form-group">
+            <input type="submit" class="button" value="Submit">
+          </div>
+
+        </form>
+      </div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
