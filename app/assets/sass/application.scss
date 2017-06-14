@@ -330,7 +330,10 @@ address {
   width: 100%;
 }
 
-.card__checkbox, .card__head, .card__body {
+.card__checkbox, .card__head {
+  padding: 7.5px 15px;
+}
+.card__body {
   padding: 15px;
 }
 

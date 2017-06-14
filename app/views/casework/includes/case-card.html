@@ -9,33 +9,44 @@
 
   <div class="card__content">
     <div class="card__head">
-      <h2 class="font-small float-left">Sponsorship &ndash; {{type}}</h2>
-      <span class="bold-small float-right">
-        Due: <span class="date" data-days="{{date}}"></span>
+      <h2 class="font-xsmall float-left">Sponsorship &ndash; {{type}} &ndash; Tier {{tier}}</h2>
+      <span class="font-xsmall float-right">
+        Requested: <span class="date" data-days="{{requested}}"></span>
       </span>
     </div>
     <div class="card__body">
       <div class="grid-row">
         <div class="column-two-thirds margin-bottom-15">
-          <a href="/casework/case?type={{type}}&name={{company}}&urn={{urn}}">{{type}}</a>
+          <a href="/casework/case?type={{type}}&name={{company}}&urn={{urn}}" class="bold-small">
+            {{company}}
+          </a>
+          {% if priority %}
+            <span class="badge premium">
+              Premium
+            </span>
+          {% endif %}
+
+
+
+          <!-- <a href="/casework/case?type={{type}}&name={{company}}&urn={{urn}}">{{type}}</a>
           {% if priority %}
            <span class="badge priority">
               Priority
             </span>
-          {% endif %}
+          {% endif %} -->
         </div>
         <div class="column-one-third">
           {{urn}}
         </div>
       </div>
       <div class="table">
-        <!-- <div class="table__cell">
+        <div class="table__cell">
           <span class="bold-small">
-            Requested
+            Due
           </span>
           <br>
-          {{requested}}
-        </div> -->
+          <span class="date" data-days="{{due}}"></span>
+        </div>
         <div class="table__cell">
           <span class="bold-small">
             Status
@@ -50,7 +61,7 @@
           <br>
           –
         </div>
-        <div class="table__cell">
+        <!-- <div class="table__cell">
           <span class="bold-small">
             Organisation
           </span>
@@ -68,7 +79,7 @@
           </span>
           <br>
           {{tier}}
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
