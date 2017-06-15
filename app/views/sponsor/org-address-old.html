@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Provide details of previous trading name
+      </h1>
+
+      <form action="/sponsor/org-address-old-overview" method="get" class="form">
+
+        <div class="form-group">
+          <label class="form-label" for="orgNameOld">Trading name</label>
+          <input class="form-control" id="orgNameOld" name="org-name-old" value="{{ data['org-name-old'] }}" type="text" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+
+          <label class="form-label" for="orgOldAddressstreet">Building and street</label>
+          <input type="text" class="form-control" id="orgOldAddressStreet1" name="orgOldAddressStreet1" value="{% if data['orgOldAddressStreet1'] %}{{ data['orgOldAddressStreet1'] }}{% endif %}">
+          <p><input type="text" class="form-control" id="orgOldAddressStreet2" name="orgOldAddressStreet2" value="{% if data['orgOldAddressStreet2'] %}{{ data['orgOldAddressStreet2'] }}{% endif %}"></p>
+
+          <label class="form-label" for="orgOldAddresstowncity">Town or city</label>
+          <p><input type="text" class="form-control" id="orgOldAddressTowncity" name="orgOldAddressCity" value="{% if data['orgOldAddressCity'] %}{{ data['orgOldAddressCity'] }}{% endif %}"></p>
+
+          <label class="form-label" for="orgOldAddresstowncity">Country</label>
+          <p><input type="text" class="form-control country-typeahead" id="orgOldAddressCountry" name="orgOldAddressCountry" value="{% if data['orgOldAddressCity'] %}{{ data['orgOldAddressCountry'] }}{% endif %}"></p>
+
+          <label class="form-label" for="orgOldAddresstowncity">Postal / Zip code
+          <small>(optional)</small></label>
+          <p><input type="text" class="form-control" id="orgOldAddressPostcode" name="orgOldAddressPostcode" style="width: 7em" value="{% if data['orgOldAddressPostcode'] %}{{ data['orgOldAddressPostcode'] }}{% endif %}"></p>
+
+        </div>
+
+        <fieldset class="form-group">
+          <legend class="form-label-bold">Date traded from</legend>
+          <div class="form-date">
+
+            <p class="form-hint">For example, 31 3 1980</p>
+
+            <div class="form-group form-group-day">
+              <label for="traded-from-day">Day</label>
+              <input class="form-control" id="traded-from-day" name="traded-from-day" type="number" pattern="[0-9]*" min="0" max="31">
+            </div>
+
+            <div class="form-group form-group-month">
+              <label for="traded-from-month">Month</label>
+              <input class="form-control" id="traded-from-month" name="traded-from-month" type="number" pattern="[0-9]*" min="0" max="12">
+            </div>
+
+            <div class="form-group form-group-year">
+              <label for="traded-from-year">Year</label>
+              <input class="form-control" id="traded-from-year" name="traded-from-year" type="number" pattern="[0-9]*" min="0" max="2014">
+            </div>
+
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend class="form-label-bold">Date traded to</legend>
+          <div class="form-date">
+
+            <p class="form-hint">For example, 31 3 1980</p>
+
+            <div class="form-group form-group-day">
+              <label for="traded-to-day">Day</label>
+              <input class="form-control" id="traded-to-day" name="traded-to-day" type="number" pattern="[0-9]*" min="0" max="31">
+            </div>
+
+            <div class="form-group form-group-month">
+              <label for="traded-to-month">Month</label>
+              <input class="form-control" id="traded-to-month" name="traded-to-month" type="number" pattern="[0-9]*" min="0" max="12">
+            </div>
+
+            <div class="form-group form-group-year">
+              <label for="traded-to-year">Year</label>
+              <input class="form-control" id="traded-to-year" name="traded-to-year" type="number" pattern="[0-9]*" min="0" max="2014">
+            </div>
+
+          </div>
+        </fieldset>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

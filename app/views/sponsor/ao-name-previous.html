@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        What&rsquo;s your previous name?
+      </h1>
+
+      <form action="/sponsor/ao-name-previous-overview" method="get" class="form">
+
+        <div class="form-group">
+          <label class="form-label" for="ao-first-name-previous">Given names</label>
+          <input class="form-control" id="ao-first-name-previous" name="ao-first-name-previous" value="{{ data['ao-first-name-previous'] }}" type="text" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="ao-second-name-previous">Family name</label>
+          <input class="form-control" id="ao-second-name-previous" name="ao-second-name-previous" value="{{ data['ao-second-name-previous'] }}" type="text" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

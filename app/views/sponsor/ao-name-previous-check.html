@@ -12,22 +12,21 @@
     <div class="column-two-thirds">
 
       <h1 class="heading-large">
-        Is your organisation&rsquo;s trading address different to your usual work address?
+        Have you ever been known by another name, for example before marriage or changed by deed poll?
       </h1>
 
-      <form action="" method="get" class="form">
+      <form action="/sponsor/ao-name-previous" method="get" class="form">
 
         <div class="form-group">
           <fieldset class="inline">
-            <legend class="visually-hidden">Is your organisation&rsquo;s trading address different to your usual work address?</legend>
             <div class="multiple-choice">
-              <input id="orgAddCheckYes" type="radio" name="org-add-check" value="Yes" {{ checked('org-add-check','Yes') }}>
-              <label for="orgAddCheckYes">Yes</label>
+              <input id="ao-name-check-yes" type="radio" name="ao-name-check" value="Yes" {{ checked('ao-name-check','Yes') }}>
+              <label for="ao-name-check-yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="orgAddCheckNo" type="radio" name="org-add-check" value="No" {{ checked('org-add-check','No') }}>
-              <label for="orgAddCheckNo">No</label>
+              <input id="ao-name-check-no" type="radio" name="ao-name-check" value="No" {{ checked('ao-name-check','No') }}>
+              <label for="ao-name-check-no">No</label>
             </div>
           </fieldset>
         </div>
@@ -39,6 +38,7 @@
       </form>
 
     </div>
+
   </div>
 </main>
 

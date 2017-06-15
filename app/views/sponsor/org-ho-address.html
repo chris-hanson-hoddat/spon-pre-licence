@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        What&rsquo;s your head office address?
+      </h1>
+
+      <form action="/sponsor/org-address-old-check" method="get" class="form">
+
+        <div class="form-group">
+
+          <label class="form-label" for="orgHOAddressstreet">Building and street</label>
+          <input type="text" class="form-control" id="orgHOAddressStreet1" name="orgHOAddressStreet1" value="{% if data['orgHOAddressStreet1'] %}{{ data['orgHOAddressStreet1'] }}{% endif %}">
+          <p><input type="text" class="form-control" id="orgHOAddressStreet2" name="orgHOAddressStreet2" value="{% if data['orgHOAddressStreet2'] %}{{ data['orgHOAddressStreet2'] }}{% endif %}"></p>
+
+          <label class="form-label" for="orgHOAddresstowncity">Town or city</label>
+          <p><input type="text" class="form-control" id="orgHOAddressTowncity" name="orgHOAddressCity" value="{% if data['orgHOAddressCity'] %}{{ data['orgHOAddressCity'] }}{% endif %}"></p>
+
+          <label class="form-label" for="orgHOAddresstowncity">Country</label>
+          <p><input type="text" class="form-control country-typeahead" id="orgHOAddressCountry" name="orgHOAddressCountry" value="{% if data['orgHOAddressCity'] %}{{ data['orgHOAddressCountry'] }}{% endif %}"></p>
+
+          <label class="form-label" for="orgHOAddresstowncity">Postal / Zip code
+          <small>(optional)</small></label>
+          <p><input type="text" class="form-control" id="orgHOAddressPostcode" name="orgHOAddressPostcode" style="width: 7em" value="{% if data['orgHOAddressPostcode'] %}{{ data['orgHOAddressPostcode'] }}{% endif %}"></p>
+
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
