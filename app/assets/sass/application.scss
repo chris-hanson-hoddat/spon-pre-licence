@@ -422,29 +422,40 @@ address {
 
 // Left Nav
 // e.g. Used on case screen
-ul.leftnavSimpler {
+ul.leftnav {
   list-style-type: none;
-  margin: 0 0 0 -0.5em;
+  margin: 0;
   padding: 0;
   overflow: hidden;
+  border-right: 1px solid $border-colour;
   float: left;
   width: 100%;
+  font-size: 16px;
 
+  li {
+    margin-bottom: 0px;
+  }
 
   li a {
     display: block;
-    padding: 0.5em 0.5em;
+    padding: 15px;
     text-decoration: none;
     transition: 0.1s;
+
+    &, &:visited {
+      color: $link-colour;
+    }
   }
 
   li a:hover {
+      background-color: $panel-colour;
       color: $link-colour;
-      text-decoration: underline;
   }
   .active, li a.active:hover {
-      font-weight: bold;
-      text-decoration: none;
+      background-color: $link-colour;
+      color: #fff !important;
+      outline: 0;
+      pointer-events: none;
   }
 
 }
