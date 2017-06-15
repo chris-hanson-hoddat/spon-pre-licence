@@ -11,29 +11,34 @@
 
     <div class="column-two-thirds">
 
-      <div class="dev-note-block">
-        <span class="dev-note">Display if T2/T5</span>
-
-        <h1 class="heading-large">
-          What&rsquo;s your organisation&rsquo;s trading name?
-        </h1>
-
-      </div>
-
-      <div class="dev-note-block">
-        <span class="dev-note">Display if T4</span>
-
-        <h1 class="heading-large">
-          What&rsquo;s your organisation&rsquo;s name?
-        </h1>
-
-      </div>
-
       <form action="/sponsor/org-address" method="get" class="form">
 
-        <div class="form-group">
-          <label class="form-label" for="orgName">Trading name</label>
-          <input class="form-control" id="orgName" name="org-name" value="{{ data['org-name'] }}" type="text" autocomplete="off">
+        <div class="dev-note-block">
+          <span class="dev-note">Display if T2/T5</span>
+
+          <h1 class="heading-large">
+            What&rsquo;s your organisation&rsquo;s trading name?
+          </h1>
+
+          <div class="form-group">
+            <label class="form-label" for="orgName">Trading name</label>
+            <input class="form-control" id="orgName" name="org-name" value="{{ data['org-name'] }}" type="text" autocomplete="off">
+          </div>
+
+        </div>
+
+        <div class="dev-note-block">
+          <span class="dev-note">Display if T4</span>
+
+          <h1 class="heading-large">
+            What&rsquo;s your organisation&rsquo;s name?
+          </h1>
+
+          <div class="form-group">
+            <label class="form-label" for="orgName">Organisation name</label>
+            <input class="form-control" id="orgName" name="org-name" value="{{ data['org-name'] }}" type="text" autocomplete="off">
+          </div>
+
         </div>
 
         <div class="form-group">
