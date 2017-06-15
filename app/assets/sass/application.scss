@@ -217,13 +217,23 @@ address {
 
 
 
-.govuk-box-highlight.new {
+.govuk-box-highlight {
   padding: 1em 2em 2em;
   background-color: $green;
 
   a, a:hover, a:visited {
     color: white;
     font-weight: 700;
+  }
+
+  &.pending {
+    padding: 1em;
+    background-color: $govuk-blue;
+    text-align: left;
+
+    h2, p {
+      margin: 0;
+    }
   }
 
   .hod-checkmark {
@@ -262,6 +272,23 @@ address {
     }
 }
 
+// Document icon used on confirmation pages
+.docIcon {
+  margin-top: 0;
+  margin-bottom: 60px;
+  cursor: pointer;
+}
+  .docIcon:before {
+    content: '';
+    width: 2em;
+    height: 3em;
+    margin-right: 1em;
+    position: relative;
+    top: 1.3em;
+    display: inline-block;
+    background: $grey-2;
+    box-shadow: 3px  -3px 0 #fff, 6px -6px 0 $grey-2;
+  }
 
 
 
@@ -288,6 +315,9 @@ address {
   margin-bottom: 30px;
   padding: 25px 15px;
 }
+
+
+
 
 
 .search-toggle {
@@ -498,6 +528,7 @@ ul.leftnav {
     width: 100%;
     margin-bottom: 20px;
   }
+
 
 
 
