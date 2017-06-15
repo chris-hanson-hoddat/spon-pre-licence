@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Other nationalities
+      </h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Nationality</th>
+            <th scope="col">Passport number</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">
+              French
+            </th>
+            <td>
+              A123456789
+            </td>
+            <td class="numeric">
+              <a href="/sponsor/ao-nationality-dual-details">Change<span class="visually-hidden"> details for French nationality</span></a>
+            </td>
+            <td class="numeric">
+              <a href="#0">Delete<span class="visually-hidden"> details for French nationality</span></a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">
+              German
+            </th>
+            <td>
+              B987654312
+            </td>
+            <td class="numeric">
+              <a href="/sponsor/ao-nationality-dual-details">Change<span class="visually-hidden"> details German nationality</span></a>
+            </td>
+            <td class="numeric">
+              <a href="#0">Delete<span class="visually-hidden"> details for German nationality</span></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><a href="/sponsor/ao-nationality-dual-details">Add another nationality</a></p>
+
+      <form action="ao-nationality-previous-check" method="get" class="form">
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

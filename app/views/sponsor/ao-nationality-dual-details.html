@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        What&rsquo;s your other nationality?
+      </h1>
+
+      <form action="/sponsor/ao-nationality-dual-overview" method="get" class="form">
+
+        <div class="form-group">
+          <label class="form-label" for="ao-nationality-dual">Nationality</label>
+          <input class="form-control" id="ao-nationality-dual" name="ao-nationality-dual" value="{{ data['ao-nationality-dual'] }}" type="text" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="ao-passport-dual">Passport number</label>
+          <input class="form-control" id="ao-passport-dual" name="ao-passport-dual" value="{{ data['ao-passport-dual'] }}" type="text" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

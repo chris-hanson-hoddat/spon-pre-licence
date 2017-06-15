@@ -12,22 +12,23 @@
     <div class="column-two-thirds">
 
       <h1 class="heading-large">
-        Do you have dual nationality?
+        Are you disqualified from being a company director?
       </h1>
 
-      <form action="/sponsor/ao-nationality-dual-details" method="get" class="form">
+      <form action="/sponsor/ao-address" method="get" class="form">
 
         <div class="form-group">
           <fieldset class="inline">
             <div class="multiple-choice">
-              <input id="ao-nationality-dual-yes" type="radio" name="ao-nationality-dual" value="Yes" {{ checked('ao-nationality-dual','Yes') }}>
-              <label for="ao-nationality-dual-yes">Yes</label>
+              <input id="ao-disqualified-director-yes" type="radio" name="ao-disqualified-director" value="Yes" {{ checked('ao-disqualified-director','Yes') }}>
+              <label for="ao-disqualified-director-yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="ao-nationality-dual-no" type="radio" name="ao-nationality-dual" value="No" {{ checked('ao-nationality-dual','No') }}>
-              <label for="ao-nationality-dual-no">No</label>
+              <input id="ao-disqualified-director-no" type="radio" name="ao-disqualified-director" value="No" {{ checked('ao-disqualified-director','No') }}>
+              <label for="ao-disqualified-director-no">No</label>
             </div>
+
           </fieldset>
         </div>
 
@@ -38,7 +39,6 @@
       </form>
 
     </div>
-
   </div>
 </main>
 
