@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Are you a British citizen?
+      </h1>
+      <p class="form-hint">This includes English, Scottish, Welsh and Northern Irish</p>
+
+      <form action="/sponsor/ao-nationality-details" method="get" class="form">
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <div class="multiple-choice">
+              <input id="ao-name-check-yes" type="radio" name="ao-name-check" value="Yes" {{ checked('ao-name-check','Yes') }}>
+              <label for="ao-name-check-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="ao-name-check-no" type="radio" name="ao-name-check" value="No" {{ checked('ao-name-check','No') }}>
+              <label for="ao-name-check-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+</main>
+
+{% endblock %}
