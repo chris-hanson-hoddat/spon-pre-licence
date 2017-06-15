@@ -42,6 +42,30 @@ $("#js-searchtoggle").click(function(e) {
 
 
 
+/////// TOGGLE ADDITIONAL
+// Toggles an additional entry with a remove option
+// e.g. dual nationality
+$('.js-toggle-content').hide();
+
+$('.js-toggle-open').click(function(e) {
+  e.preventDefault();
+
+  $('.js-toggle-content').show();
+  $('.js-toggle-open').hide();
+
+});
+
+$('.js-toggle-close').click(function(e) {
+  e.preventDefault();
+
+  $('.js-toggle-content').hide();
+  $('.js-toggle-open').show();
+
+});
+
+
+
+
 
 // Set dates dynamically so they stay useful throughout prototyping
 $('.date').each(function() {
