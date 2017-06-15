@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        What&rsquo;s your position within the organisation?
+      </h1>
+
+      <form action="/sponsor/ao-contact" method="get" class="form">
+
+        <div class="form-group">
+          <label class="form-label" for="ao-position">Position</label>
+          <input class="form-control" id="ao-position" name="ao-position" value="{{ data['ao-position'] }}" type="text" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
