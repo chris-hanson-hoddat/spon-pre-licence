@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Do you have any bankruptcies?
+      </h1>
+
+      <form action="/sponsor/ao-disqualified-director" method="get" class="form">
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <div class="multiple-choice" data-target="ao-bankruptcies-content">
+              <input id="ao-bankruptcies-yes" type="radio" name="ao-bankruptcies" value="Yes" {{ checked('ao-bankruptcies','Yes') }}>
+              <label for="ao-bankruptcies-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="ao-bankruptcies-no" type="radio" name="ao-bankruptcies" value="No" {{ checked('ao-bankruptcies','No') }}>
+              <label for="ao-bankruptcies-no">No</label>
+            </div>
+
+            <div class="panel panel-border-narrow js-hidden" id="ao-bankruptcies-content" aria-hidden="true">
+
+              <div class="form-group">
+                <label class="form-label" for="ao-bankruptcies-details">Details, including dates</label>
+                <textarea type="text" class="form-control" id="ao-bankruptcies-details" name="ao-bankruptcies-details" rows="5" style="width: 100%;">{{ data['ao-bankruptcies-details']}}</textarea>
+              </div>
+
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

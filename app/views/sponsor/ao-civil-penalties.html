@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Do you have any civil penalties issued by the Home Office?
+      </h1>
+
+      <form action="/sponsor/ao-bankruptcies" method="get" class="form">
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <div class="multiple-choice" data-target="ao-civil-penalties-content">
+              <input id="ao-civil-penalties-yes" type="radio" name="ao-civil-penalties" value="Yes" {{ checked('ao-civil-penalties','Yes') }}>
+              <label for="ao-civil-penalties-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="ao-civil-penalties-no" type="radio" name="ao-civil-penalties" value="No" {{ checked('ao-civil-penalties','No') }}>
+              <label for="ao-civil-penalties-no">No</label>
+            </div>
+
+            <div class="panel panel-border-narrow js-hidden" id="ao-civil-penalties-content" aria-hidden="true">
+
+              <div class="form-group">
+                <label class="form-label" for="ao-civil-penalties-details">Details, including dates</label>
+                <textarea type="text" class="form-control" id="ao-civil-penalties-details" name="ao-civil-penalties-details" rows="5" style="width: 100%;">{{ data['ao-civil-penalties-details']}}</textarea>
+              </div>
+
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

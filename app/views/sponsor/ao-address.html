@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Where do you usually work?
+      </h1>
+
+      <form action="#0" method="get" class="form">
+
+        <div class="form-group">
+          <fieldset>
+            <legend class="visually-hidden"></legend>
+            <div class="multiple-choice">
+              <input id="ao-address-trading" type="radio" name="ao-address" value="Address they entered for trading address" {{ checked('ao-address','Address they entered for trading address') }}>
+              <label for="ao-address-trading">Address they entered for trading address</label>
+            </div>
+
+            <div class="multiple-choice" data-target="ao-address-content">
+              <input id="ao-address-other" type="radio" name="ao-address" value="Other" {{ checked('ao-address','Other') }}>
+              <label for="ao-address-other">Other</label>
+            </div>
+
+            <div class="panel panel-border-narrow js-hidden" id="ao-address-content" aria-hidden="true">
+
+              <p class="form-hint">This must be a UK address</p>
+
+              <div class="form-group">
+
+                <label class="form-label" for="ao-address-street">Building and street</label>
+                <input type="text" class="form-control" id="ao-address-Street1" name="ao-address-Street1" value="{% if data['ao-address-Street1'] %}{{ data['ao-address-Street1'] }}{% endif %}">
+                <p><input type="text" class="form-control" id="ao-address-Street2" name="ao-address-Street2" value="{% if data['ao-address-Street2'] %}{{ data['ao-address-Street2'] }}{% endif %}"></p>
+
+                <label class="form-label" for="ao-address-towncity">Town or city</label>
+                <p><input type="text" class="form-control" id="ao-address-Towncity" name="ao-address-City" value="{% if data['ao-address-City'] %}{{ data['ao-address-City'] }}{% endif %}"></p>
+
+                <label class="form-label" for="ao-address-towncity">Postcode</label>
+                <p><input type="text" class="form-control" id="ao-address-Postcode" name="ao-address-Postcode" style="width: 7em" value="{% if data['ao-address-Postcode'] %}{{ data['ao-address-Postcode'] }}{% endif %}"></p>
+
+              </div>
+
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
