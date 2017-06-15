@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Are you the right person to make this application?
+      </h1>
+
+      <p>You need to:</p>
+      <ul class="list list-bullet">
+        <li>be an employee or <a href="https://www.gov.uk/employment-status/office-holder">office holder</a> of your organisation</li>
+        <li>have senior responsibility for the recruitment of workers employed through this service </li>
+        <li>be allowed to act on behalf of your organisation </li>
+        <li>work in the UK</li>
+      </ul>
+
+      <form action="/sponsor/start-responsible" method="get" class="form">
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Yes, continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

@@ -27,12 +27,10 @@
           What&rsquo;s your organisation&rsquo;s address?
 
         </h1>
-      <p class="form-hint">This will be the main address for your sponsor licence. It must be a UK address.</p>
+        <p class="form-hint">This will be the main address for your sponsor licence. It must be a UK address.</p>
       </div>
 
-      <form action="/sponsor/org-ho-check" method="get" class="form">
-
-
+      <form action="/sponsor/org-ho-address" method="get" class="form">
 
         <div class="form-group">
 
@@ -47,6 +45,30 @@
           <p><input type="text" class="form-control" id="orgAddressPostcode" name="orgAddressPostcode" style="width: 7em" value="{% if data['orgAddressPostcode'] %}{{ data['orgAddressPostcode'] }}{% endif %}"></p>
 
         </div>
+
+
+
+        <h2 class="heading-medium">
+          Is this also your head office address?
+          <!-- Is your organisation&rsquo;s head office address different to the trading address? -->
+          <!-- Do you have a head office at another address? -->
+          <!-- Is your organisation's head office at a different address? -->
+        </h2>
+        <div class="form-group">
+          <fieldset class="inline">
+            <div class="multiple-choice">
+              <input id="ho-check-yes" type="radio" name="ho-check" value="Yes" {{ checked('ho-check','Yes') }}>
+              <label for="ho-check-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="ho-check-no" type="radio" name="ho-check" value="No" {{ checked('ho-check','No') }}>
+              <label for="ho-check-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+
 
         <div class="form-group">
           <input class="button" type="submit" value="Continue">

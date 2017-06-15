@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Will you be able to do these things?
+      </h1>
+
+      <p>You will need to be able to:</p>
+      <ul class="list list-bullet">
+        <li>keep records of people employed through this service </li>
+        <li>inform UK Visas &amp; Immigration of changes </li>
+        <li>make sure your organisation continues to meet its <a href="https://www.gov.uk/uk-visa-sponsorship-employers/your-responsibilities">responsibilities</a></li>
+      </ul>
+
+      <p>You will also be responsible for any other staff who help you with this.</p>
+
+      <form action="/sponsor/categories" method="get" class="form">
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Yes, continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
