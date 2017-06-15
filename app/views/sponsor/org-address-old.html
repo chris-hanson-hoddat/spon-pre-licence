@@ -23,25 +23,47 @@
         </div>
 
         <div class="form-group">
+          <fieldset>
+            <legend class="heading-small">What address did you trade under?</legend>
+            <div class="multiple-choice">
+              <input id="ao-address-trading" type="radio" name="ao-address" value="Address they entered for trading address" {{ checked('ao-address','Address they entered for trading address') }}>
+              <label for="ao-address-trading">Address they entered for trading address</label>
+            </div>
 
-          <label class="form-label" for="orgOldAddressstreet">Building and street</label>
-          <input type="text" class="form-control" id="orgOldAddressStreet1" name="orgOldAddressStreet1" value="{% if data['orgOldAddressStreet1'] %}{{ data['orgOldAddressStreet1'] }}{% endif %}">
-          <p><input type="text" class="form-control" id="orgOldAddressStreet2" name="orgOldAddressStreet2" value="{% if data['orgOldAddressStreet2'] %}{{ data['orgOldAddressStreet2'] }}{% endif %}"></p>
+            <div class="multiple-choice" data-target="org-address-old-content">
+              <input id="ao-address-other" type="radio" name="ao-address" value="Other" {{ checked('ao-address','Other') }}>
+              <label for="ao-address-other">Other</label>
+            </div>
 
-          <label class="form-label" for="orgOldAddresstowncity">Town or city</label>
-          <p><input type="text" class="form-control" id="orgOldAddressTowncity" name="orgOldAddressCity" value="{% if data['orgOldAddressCity'] %}{{ data['orgOldAddressCity'] }}{% endif %}"></p>
+            <div class="panel panel-border-narrow js-hidden" id="org-address-old-content" aria-hidden="true">
 
-          <label class="form-label" for="orgOldAddresstowncity">Country</label>
-          <p><input type="text" class="form-control country-typeahead" id="orgOldAddressCountry" name="orgOldAddressCountry" value="{% if data['orgOldAddressCity'] %}{{ data['orgOldAddressCountry'] }}{% endif %}"></p>
+              <div class="form-group">
 
-          <label class="form-label" for="orgOldAddresstowncity">Postal / Zip code
-          <small>(optional)</small></label>
-          <p><input type="text" class="form-control" id="orgOldAddressPostcode" name="orgOldAddressPostcode" style="width: 7em" value="{% if data['orgOldAddressPostcode'] %}{{ data['orgOldAddressPostcode'] }}{% endif %}"></p>
+                <label class="form-label" for="orgOldAddressstreet">Building and street</label>
+                <input type="text" class="form-control" id="orgOldAddressStreet1" name="orgOldAddressStreet1" value="{% if data['orgOldAddressStreet1'] %}{{ data['orgOldAddressStreet1'] }}{% endif %}">
+                <p><input type="text" class="form-control" id="orgOldAddressStreet2" name="orgOldAddressStreet2" value="{% if data['orgOldAddressStreet2'] %}{{ data['orgOldAddressStreet2'] }}{% endif %}"></p>
 
+                <label class="form-label" for="orgOldAddresstowncity">Town or city</label>
+                <p><input type="text" class="form-control" id="orgOldAddressTowncity" name="orgOldAddressCity" value="{% if data['orgOldAddressCity'] %}{{ data['orgOldAddressCity'] }}{% endif %}"></p>
+
+                <label class="form-label" for="orgOldAddresstowncity">Country</label>
+                <p><input type="text" class="form-control country-typeahead" id="orgOldAddressCountry" name="orgOldAddressCountry" value="{% if data['orgOldAddressCity'] %}{{ data['orgOldAddressCountry'] }}{% endif %}"></p>
+
+                <label class="form-label" for="orgOldAddresstowncity">Postal / Zip code
+                <small>(optional)</small></label>
+                <p><input type="text" class="form-control" id="orgOldAddressPostcode" name="orgOldAddressPostcode" style="width: 7em" value="{% if data['orgOldAddressPostcode'] %}{{ data['orgOldAddressPostcode'] }}{% endif %}"></p>
+
+              </div>
+
+            </div>
+
+          </fieldset>
         </div>
 
+
+
         <fieldset class="form-group">
-          <legend class="form-label-bold">Date traded from</legend>
+          <legend class="heading-small">Date traded from</legend>
           <div class="form-date">
 
             <p class="form-hint">For example, 31 3 1980</p>
@@ -65,7 +87,7 @@
         </fieldset>
 
         <fieldset class="form-group">
-          <legend class="form-label-bold">Date traded to</legend>
+          <legend class="heading-small">Date traded to</legend>
           <div class="form-date">
 
             <p class="form-hint">For example, 31 3 1980</p>
