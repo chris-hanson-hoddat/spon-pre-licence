@@ -12,22 +12,21 @@
     <div class="column-two-thirds">
 
       <h1 class="heading-large">
-        Is your organisation&rsquo;s trading address different to your usual work address?
+        Is your organisation&rsquo;s head office address different to the trading address?
       </h1>
 
-      <form action="" method="get" class="form">
+      <form action="/sponsor/org-ho-address" method="get" class="form">
 
         <div class="form-group">
           <fieldset class="inline">
-            <legend class="visually-hidden">Is your organisation&rsquo;s trading address different to your usual work address?</legend>
             <div class="multiple-choice">
-              <input id="orgAddCheckYes" type="radio" name="org-add-check" value="Yes" {{ checked('org-add-check','Yes') }}>
-              <label for="orgAddCheckYes">Yes</label>
+              <input id="hoCheckYes" type="radio" name="ho-check" value="Yes" {{ checked('ho-check','Yes') }}>
+              <label for="hoCheckYes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="orgAddCheckNo" type="radio" name="org-add-check" value="No" {{ checked('org-add-check','No') }}>
-              <label for="orgAddCheckNo">No</label>
+              <input id="hoCheckNo" type="radio" name="ho-check" value="No" {{ checked('ho-check','No') }}>
+              <label for="hoCheckNo">No</label>
             </div>
           </fieldset>
         </div>
