@@ -12,19 +12,19 @@
     <div class="column-two-thirds">
 
       <h1 class="heading-large">
-        Provide details of previous trading name
+        What was your organisation&rsquo;s previous name?
       </h1>
 
       <form action="/sponsor/org-address-old-overview" method="get" class="form">
 
         <div class="form-group">
-          <label class="form-label" for="orgNameOld">Trading name</label>
+          <label class="form-label" for="orgNameOld">Name</label>
           <input class="form-control" id="orgNameOld" name="org-name-old" value="{{ data['org-name-old'] }}" type="text" autocomplete="off">
         </div>
 
         <div class="form-group">
           <fieldset>
-            <legend class="heading-small">What address did you trade under?</legend>
+            <legend class="heading-small">What was the address?</legend>
             <div class="multiple-choice">
               <input id="ao-address-trading" type="radio" name="ao-address" value="Address they entered for trading address" {{ checked('ao-address','Address they entered for trading address') }}>
               <label for="ao-address-trading">Address they entered for trading address</label>
@@ -49,8 +49,7 @@
                 <label class="form-label" for="orgOldAddresstowncity">Country</label>
                 <p><input type="text" class="form-control country-typeahead" id="orgOldAddressCountry" name="orgOldAddressCountry" value="{% if data['orgOldAddressCity'] %}{{ data['orgOldAddressCountry'] }}{% endif %}"></p>
 
-                <label class="form-label" for="orgOldAddresstowncity">Postal / Zip code
-                <small>(optional)</small></label>
+                <label class="form-label" for="orgOldAddresstowncity">Postcode
                 <p><input type="text" class="form-control" id="orgOldAddressPostcode" name="orgOldAddressPostcode" style="width: 7em" value="{% if data['orgOldAddressPostcode'] %}{{ data['orgOldAddressPostcode'] }}{% endif %}"></p>
 
               </div>
@@ -61,9 +60,10 @@
         </div>
 
 
-
+        <p class="heading-medium">When did your organisation use this name?</p>
         <fieldset class="form-group">
-          <legend class="heading-small">Date traded from</legend>
+
+          <legend class="heading-small">From date</legend>
           <div class="form-date">
 
             <p class="form-hint">For example, 31 3 1980</p>
@@ -87,7 +87,7 @@
         </fieldset>
 
         <fieldset class="form-group">
-          <legend class="heading-small">Date traded to</legend>
+          <legend class="heading-small">To date</legend>
           <div class="form-date">
 
             <p class="form-hint">For example, 31 3 1980</p>
