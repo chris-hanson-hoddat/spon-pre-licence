@@ -29,12 +29,13 @@ $.fn.extend({
 });
 
 
-
+// Change logo link to route of proto rather than gov.uk
 $('#logo').attr('href', '/');
+
+// Change service title link to relevant location based on sponsor or casework
 if( /sponsor/.test(window.location.href) ){
   $('#proposition-name').attr('href', '/sponsor/start');
 }
-// Redirect org address change to postcode proto
 else if( /casework/.test(window.location.href) ){
   $('#proposition-name').attr('href', '/casework/workstack');
 }
