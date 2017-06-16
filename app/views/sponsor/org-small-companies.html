@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Types of company that should pay the larger fee
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Company types that pay the larger fee
+      </h1>
+
+      <p>At any time in your last full financial year, have you been any of these?</p>
+      <ul class="list list-bullet">
+        <li>a public company</li>
+        <li>an authorised insurance company, a banking company, an e-money issuer, a MiFID investment firm or a UCITS management company</li>
+        <li>a company that carries on insurance market activity</li>
+      </ul>
+
+      <form action="/sponsor/org-small-companies-group" method="get" class="form">
+        <div class="form-group">
+
+          <fieldset class="inline">
+            <div class="multiple-choice">
+              <input id="org-small-companies-yes" type="radio" name="org-small-companies" value="Yes" {{ checked('org-small-companies','Yes') }}>
+              <label for="org-small-companies-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="org-small-companies-no" type="radio" name="org-small-companies" value="No" {{ checked('org-small-companies','No') }}>
+              <label for="org-small-companies-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        How many people do you employ?
+      </h1>
+      <p class="form-hint">Include both full-time and part-time employees.</p>
+
+      <form action="/sponsor/org-turnover" method="get" class="form">
+
+        <div class="form-group">
+          <label class="form-label" for="org-employees">Number of employees</label>
+          <input class="form-control" id="org-employees" name="org-employees" value="{{ data['org-employees'] }}" type="text" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

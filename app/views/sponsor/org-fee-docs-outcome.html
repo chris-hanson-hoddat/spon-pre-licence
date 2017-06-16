@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-full">
+      <div class="hod__flash-card">
+        <div class="grid-row">
+          <div class="column-two-thirds">
+              <header>
+                <h1 class="heading-large">
+                  Before you continue
+                </h1>
+              </header>
+
+              <p>You will be asked to provide these at the end of this form:</p>
+              <ul class="list list-bullet">
+                <li>document from HMRC: CT41G Information for new companies</li>
+                <li>employers liability insurance certificate</li>
+              </ul>
+
+              <p>and you will need to pay</p>
+              <ul class="list list-bullet">
+                <li>&pound;536 fee by credit or debit card</li>
+              </ul>
+
+              <div class="panel panel-border-wide">
+                <p>If you don&rsqou;t provide this evidence we can&rsqou;t consider your application.</p>
+                <p>They must be the original documents, or copies which have been notarised by a solicitor.</p>
+              </div>
+
+              <a class="button" href="/sponsor/ao-name" role="button">Continue</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+{% endblock %}

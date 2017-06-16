@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        What&rsquo;s your most recent annual turnover?
+      </h1>
+      <p class="form-hint">Use the turnover for your last full financial year.</p>
+
+      <form action="/sponsor/org-balance-sheet" method="get" class="form">
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <div class="multiple-choice">
+              <input id="org-turnover-less" type="radio" name="org-turnover" value="less" {{ checked('org-turnover','less') }}>
+              <label for="org-turnover-less">&pound;10.2 million or less</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="org-turnover-more" type="radio" name="org-turnover" value="more" {{ checked('org-turnover','more') }}>
+              <label for="org-turnover-more">More than &pound;10.2 million</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

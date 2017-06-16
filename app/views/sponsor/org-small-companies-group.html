@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-full">
+      <a onclick="history.go(-1); return false;" href="#0" class="link-back">Back</a>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Other companies in your group
+      </h1>
+
+      <p>At any time in your last full financial year, have you been part of a group that includes any of these?</p>
+      <ul class="list list-bullet">
+        <li>a traded company</li>
+        <li>a body corporate (other than a company) whose shares are admitted to trading on a regulated market in an EEA State</li>
+        <li>a person (other than a small company) who has permission under Part 4 of the Financial Services and Markets Act 2000 (c. 8) to carry on a regulated activity</li>
+        <li>an authorised insurance company, a banking company, an e-money issuer, a MiFID investment firm or a UCITS management company</li>
+        <li>a person who carries on insurance market activity</li>
+      </ul>
+
+      <form action="/sponsor/org-fee-docs-outcome" method="get" class="form">
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <div class="multiple-choice">
+              <input id="org-small-companies-group-yes" type="radio" name="org-small-companies-group" value="Yes" {{ checked('org-small-companies-group','Yes') }}>
+              <label for="org-small-companies-group-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="org-small-companies-group-no" type="radio" name="org-small-companies-group" value="No" {{ checked('org-small-companies-group','No') }}>
+              <label for="org-small-companies-group-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
